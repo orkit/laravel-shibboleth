@@ -2,6 +2,8 @@
 
 namespace StudentAffairsUwm\Shibboleth\Controllers;
 
+use App\Events\Frontend\UserRegistered;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\GenericUser;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -101,6 +103,10 @@ class ShibbolethController extends Controller
         elseif (config('shibboleth.add_new_users', true)) {
             $map['password'] = 'shibboleth';
             $user = $userClass::create($map);
+            //Laravelstarter CMS customization
+            event(new Registered($user));
+            event(new UserRegistered($user));
+
             Auth::login($user);
         } else {
             return abort(403, 'Unauthorized');
