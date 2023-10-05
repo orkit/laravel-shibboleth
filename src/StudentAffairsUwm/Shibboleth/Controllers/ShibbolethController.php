@@ -2,8 +2,6 @@
 
 namespace StudentAffairsUwm\Shibboleth\Controllers;
 
-use App\Events\Frontend\UserRegistered;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\GenericUser;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
