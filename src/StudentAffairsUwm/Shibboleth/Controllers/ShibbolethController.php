@@ -2,6 +2,7 @@
 
 namespace StudentAffairsUwm\Shibboleth\Controllers;
 
+use App\Events\UserCreatedSuccessful;
 use Illuminate\Auth\GenericUser;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -101,6 +102,7 @@ class ShibbolethController extends Controller
         elseif (config('shibboleth.add_new_users', true)) {
             $map['password'] = 'shibboleth';
             $user = $userClass::create($map);
+            UserCreatedSuccessful::dispatch($user);
             Auth::login($user);
         } else {
             return abort(403, 'Unauthorized');
