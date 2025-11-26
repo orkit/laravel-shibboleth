@@ -24,9 +24,9 @@
     }
   ],
   "require": {
-    "illuminate/support": "5.* || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
+    "illuminate/support": "5.* || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0",
     "mrclay/shibalike": "1.0.0",
-    "laravel/framework": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
+    "laravel/framework": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0",
     "php-open-source-saver/jwt-auth": "^1.4 || ^2.0"
   },
   "autoload": {
@@ -42,8 +42,8 @@
   },
   "minimum-stability": "stable",
   "require-dev": {
-    "phpunit/phpunit": "^6.0|^7.0|^8.0",
-    "orchestra/testbench": "^3.4|^4.0|^5.0"
+    "phpunit/phpunit": "^6.0|^7.0|^8.0 |^8.5|^9.6|^10.5",
+    "orchestra/testbench": "^3.4|^4.0|^5.0|^10"
   },
   "extra": {
     "laravel": {
