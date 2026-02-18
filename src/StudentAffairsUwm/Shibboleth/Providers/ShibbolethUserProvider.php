@@ -6,6 +6,7 @@ use Hash;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\UserProvider as UserProviderInterface;
 use Illuminate\Support\Str;
+use Illuminate\Contracts\Auth\Authenticatable as UserContract;
 
 class ShibbolethUserProvider implements UserProviderInterface
 {
@@ -101,5 +102,10 @@ class ShibbolethUserProvider implements UserProviderInterface
     public function retrieveByToken($identifier, $token)
     {
         // Not Implemented
+    }
+
+    public function rehashPasswordIfRequired(UserContract $user, array $credentials, bool $force = false): void
+    {
+        // Shibboleth users authenticate via SSO; no local password to rehash.
     }
 }
